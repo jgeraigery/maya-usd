@@ -16,7 +16,7 @@ jobs:
       if: ${{ github.event.assignee.login == github.event.pull_request.user.login }}
       steps:
       # Feb 2024: Update from v3 to v4 which uses node20 (node16 is out of support).
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: DoozyX/clang-format-lint-action@v0.17
         with:
           source: '.'
@@ -33,7 +33,7 @@ jobs:
 
         # Build start info will be committed here when the remote build is launched
         - name: Setup transfer repo
-          uses: actions/checkout@v4
+          uses: actions/checkout@v5
           with:
             repository: ecp-maya-devops-adsk/log-transfer
             ref: transfer
